@@ -1,5 +1,9 @@
 package action;
 
+import com.opensymphony.xwork2.ActionSupport;
+import com.opensymphony.xwork2.inject.Scope;
+import com.opensymphony.xwork2.inject.Scoped;
+
 import service.SocioService;
 
 /**
@@ -9,9 +13,13 @@ import service.SocioService;
  * @author CruzadoJ
  *
  */
-public class SocioAction {
+@Scoped(Scope.SESSION)
+public class SocioAction extends ActionSupport {
+
+	private static final long serialVersionUID = 3827705983890342206L;
 
 	private SocioService servicio;
+	private String accion;
 
 	public SocioService getServicio() {
 		return servicio;
@@ -19,6 +27,14 @@ public class SocioAction {
 
 	public void setServicio(SocioService servicio) {
 		this.servicio = servicio;
+	}
+
+	public String getAccion() {
+		return accion;
+	}
+
+	public void setAccion(String accion) {
+		this.accion = accion;
 	}
 
 }

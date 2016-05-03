@@ -7,7 +7,7 @@ import bean.Socio;
 public interface SocioMapper {
 	
 	/**
-	 * <strong>Registrar<strong>
+	 * <strong>Registrar<strong> <br>
 	 * Método que registra un socio.
 	 * 
 	 * @author CruzadoJ
@@ -19,7 +19,7 @@ public interface SocioMapper {
 	public void registrar(Socio socio);
 	
 	/**
-	 * <strong>Eliminar<strong>
+	 * <strong>Eliminar<strong> <br>
 	 * Método que elimina un socio.
 	 * 
 	 * @author CruzadoJ
@@ -31,7 +31,7 @@ public interface SocioMapper {
 	public void eliminar(String codigo);
 	
 	/**
-	 * <strong>Listar<strong>
+	 * <strong>Listar<strong> <br>
 	 * Método que lista a todos los socio.
 	 * 
 	 * @author CruzadoJ

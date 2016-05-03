@@ -37,23 +37,23 @@
                                     <form class="form-horizontal" role="form">
                                
                                         <div class="form-group">
-                                            <label class="col-md-2 control-label">Obligacion</label>
+                                            <label class="col-md-3 control-label">Obligacion</label>
                                             <div class="col-md-7">
                                                 <input type="text" class="form-control" value="" placeholder="OP-000001" disabled="disabled">
                                             </div>
-                                            <div class="col-md-3">
+                                            <div class="col-md-2">
                                                 <input type="button" class="btn btn-primary" value="Buscar">
                                             </div>
                                         </div>
                                         <div class="form-group">
-                                            <label class="col-md-2 control-label">Socio</label>
-                                            <div class="col-md-10">
+                                            <label class="col-md-3 control-label">Socio</label>
+                                            <div class="col-md-9">
                                                 <input type="text" class="form-control" value="" placeholder="Nicolas Hidalgo Correa" disabled="disabled">
                                             </div>
                                         </div>
                                         <div class="form-group">
-                                            <label class="col-sm-2 control-label">Tipo Obligación</label>
-                                            <div class="col-sm-10">
+                                            <label class="col-sm-3 control-label">Tipo Obligación</label>
+                                            <div class="col-sm-9">
                                                 <select class="form-control" disabled="disabled">
                                                     <option>Con fecha de vencimiento</option>
                                                     <option>Sin fecha de vencimiento</option>
@@ -62,28 +62,26 @@
                                             </div>
                                         </div>
                                         <div class="form-group">
-                                            <label class="col-md-2 control-label">Número Cuota</label>
-                                            <div class="col-md-10">
+                                            <label class="col-md-3 control-label">Número Cuota</label>
+                                            <div class="col-md-9">
                                                 <input type="text" class="form-control" value="" placeholder="01" disabled="disabled">
                                             </div>
                                         </div>
-                                        
                                         <div class="form-group">
-                                            <label class="col-md-2 control-label">Fecha Real de Pago</label>
-                                            <div class="col-md-10">
+                                            <label class="col-md-3 control-label">Vencimiento</label>
+                                            <div class="col-md-9">
+                                                <input type="text" class="form-control" value="" placeholder="Fecha Vencimiento">
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="col-md-3 control-label">Fecha Real de Pago</label>
+                                            <div class="col-md-9">
                                                 <input type="text" class="form-control" value="" placeholder="Fecha real de pago">
                                             </div>
                                         </div>
                                         <div class="form-group">
-                                            <label class="col-md-2 control-label">Vencimiento</label>
-                                            <div class="col-md-10">
-                                                <input type="text" class="form-control" value="" placeholder="Fecha Vencimiento">
-                                            </div>
-                                        </div>
-
-                                        <div class="form-group">
-                                            <label class="col-sm-2 control-label">Tipo de Pago</label>
-                                            <div class="col-sm-10">
+                                            <label class="col-sm-3 control-label">Tipo de Pago</label>
+                                            <div class="col-sm-9">
                                                 <select class="form-control">
                                                     <option>Completa</option>
                                                     <option>Fraccionada</option>                                                   
@@ -98,8 +96,8 @@
                                     <form class="form-horizontal" role="form">                                                                                                               
                                         
                                         <div class="form-group">
-                                            <label class="col-sm-2 control-label">Forma de Pago</label>
-                                            <div class="col-sm-10">
+                                            <label class="col-sm-3 control-label">Forma de Pago</label>
+                                            <div class="col-sm-9">
                                                 <select class="form-control">
                                                     <option>Crédito</option>
                                                     <option>Tarjeta</option>                                                   
@@ -108,36 +106,36 @@
                                         </div>
                                         
                                         <div class="form-group">
-                                            <label class="col-md-2 control-label">Mora</label>
-                                            <div class="col-md-10">
+                                            <label class="col-md-3 control-label">Mora</label>
+                                            <div class="col-md-9">
                                                 <input type="text" class="form-control" value="" placeholder="Mora">
                                             </div>
                                         </div>
                                         
                                         <div class="form-group">
-                                            <label class="col-md-2 control-label">Monto a cobrar</label>
-                                            <div class="col-md-10">
+                                            <label class="col-md-3 control-label">Monto a cobrar</label>
+                                            <div class="col-md-9">
                                                 <input type="text" class="form-control" value="" placeholder="Monto a cobrar">
                                             </div>
                                         </div>
                                         
                                         <div class="form-group">
-                                            <label class="col-md-2 control-label">Monto pagado</label>
-                                            <div class="col-md-10">
+                                            <label class="col-md-3 control-label">Monto pagado</label>
+                                            <div class="col-md-9">
                                                 <input type="text" class="form-control" value="" placeholder="Monto pagado">
                                             </div>
                                         </div>
                                         
                                         <div class="form-group">
-                                            <label class="col-md-2 control-label">Saldo a favor</label>
-                                            <div class="col-md-10">
+                                            <label class="col-md-3 control-label">Saldo a favor</label>
+                                            <div class="col-md-9">
                                                 <input type="text" class="form-control" value="" placeholder="Saldo a favor">
                                             </div>
                                         </div>
                                         
                                         <div class="form-group">
-                                            <label class="col-sm-2 control-label">Comprobante de Pago</label>
-                                            <div class="col-sm-10">
+                                            <label class="col-sm-3 control-label">Comprobante de Pago</label>
+                                            <div class="col-sm-9">
                                                 <select class="form-control">
                                                     <option>Boleta</option>
                                                     <option>Factura</option>                                                   
