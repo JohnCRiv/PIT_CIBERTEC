@@ -20,7 +20,7 @@ public class MyBatisUtil {
 	static {
 		try {
 			Reader reader = Resources.getResourceAsReader("mybatis/config/mybatis-config.xml");
-			FACTORY = new SqlSessionFactoryBuilder().build(reader, "mysql");
+			FACTORY = new SqlSessionFactoryBuilder().build(reader);
 		} catch (Exception e) {
 			e.printStackTrace();
 		}

@@ -1,4 +1,4 @@
-package mybatis.mapper;
+package mybatis.interfaces;
 
 import java.util.List;
 

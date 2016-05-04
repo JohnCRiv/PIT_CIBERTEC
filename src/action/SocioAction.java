@@ -1,5 +1,7 @@
 package action;
 
+import org.apache.struts2.convention.annotation.ParentPackage;
+
 import com.opensymphony.xwork2.ActionSupport;
 import com.opensymphony.xwork2.inject.Scope;
 import com.opensymphony.xwork2.inject.Scoped;
@@ -14,19 +16,28 @@ import service.SocioService;
  *
  */
 @Scoped(Scope.SESSION)
+@ParentPackage("pit")
 public class SocioAction extends ActionSupport {
 
 	private static final long serialVersionUID = 3827705983890342206L;
 
-	private SocioService servicio;
+	private SocioService service;
 	private String accion;
-
-	public SocioService getServicio() {
-		return servicio;
+	
+	public SocioAction() {
+		inicializarVariables();
+	}
+	
+	private void inicializarVariables() {
+		service = new SocioService();
 	}
 
-	public void setServicio(SocioService servicio) {
-		this.servicio = servicio;
+	public SocioService getService() {
+		return service;
+	}
+
+	public void setService(SocioService service) {
+		this.service = service;
 	}
 
 	public String getAccion() {

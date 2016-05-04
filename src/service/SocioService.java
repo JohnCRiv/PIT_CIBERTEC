@@ -5,7 +5,7 @@ import java.util.List;
 import org.apache.ibatis.session.SqlSession;
 
 import bean.Socio;
-import mybatis.mapper.SocioMapper;
+import mybatis.interfaces.SocioMapper;
 import util.MyBatisUtil;
 
 public class SocioService implements SocioMapper {
