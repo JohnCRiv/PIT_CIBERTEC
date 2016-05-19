@@ -1,6 +1,4 @@
-/util/
 /mybatis/
-/bean/
-/service/
 /action/
-/dto/
+/service/
+/bean/

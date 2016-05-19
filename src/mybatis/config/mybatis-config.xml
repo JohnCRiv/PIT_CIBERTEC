@@ -11,8 +11,10 @@
 	
 	<typeAliases>
 		<typeAlias type="bean.Socio" alias="socio"/>
+		<typeAlias type="bean.Establecimiento" alias="establecimiento"/>
+		<typeAlias type="bean.Ubigeo" alias="ubigeo"/>
 	</typeAliases>
-
+	
 	<environments default="mysql">
 		<environment id="mysql">
 			<transactionManager type="JDBC" />
@@ -27,6 +29,8 @@
 	
 	<mappers>
 		<mapper resource="mybatis/mapper/SocioMapper.xml"/>
+		<mapper resource="mybatis/mapper/EstablecimientoMapper.xml"/>
+		<mapper resource="mybatis/mapper/UbigeoMapper.xml"/>
 	</mappers>
 	
 </configuration>
