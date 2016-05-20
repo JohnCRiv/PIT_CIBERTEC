@@ -1,5 +1,8 @@
 package action;
 
+import java.io.File;
+import java.io.IOException;
+import java.util.Date;
 import java.util.List;
 
 import org.apache.struts2.convention.annotation.Action;
@@ -33,7 +36,17 @@ public class EstablecimientoAction extends ActionSupport {
 			ubigeo = new UbigeoService().obtenerIdUbigeo(depa, prov, dist);
 			//System.out.println(ubigeo.getIdUbigeo());
 		}
+		File file = establecimiento.getFiFoto();
+		try {
+			establecimiento.setByFotoBytes(util.Constantes.getBytesFromFile(file));
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
 		establecimiento.setIdUbigeo(ubigeo.getIdUbigeo());
+		Date fechaSistema = new Date();
+		establecimiento.setFechaRegistro(fechaSistema);
 		establecimiento.setEstado("Habilitado");
 
 		new EstablecimientoService().registrar(establecimiento);
@@ -47,8 +60,16 @@ public class EstablecimientoAction extends ActionSupport {
 			ubigeo = new UbigeoService().obtenerIdUbigeo(depa, prov, dist);
 			//System.out.println(ubigeo.getIdUbigeo());
 		}
+		
+		File file = establecimiento.getFiFoto();
+		try {
+			establecimiento.setByFotoBytes(util.Constantes.getBytesFromFile(file));
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
 		establecimiento.setIdUbigeo(ubigeo.getIdUbigeo());
-		establecimiento.setEstado("Habilitado");
 		new EstablecimientoService().actualizar(establecimiento);
 		listar();
 		return "actualizar";
@@ -98,7 +119,12 @@ public class EstablecimientoAction extends ActionSupport {
 		setDepa(establecimiento.getCodDepartamento());
 		setProv(establecimiento.getCodProvincia());
 		setDist(establecimiento.getCodDistrito());
-		System.out.println(depa+prov+dist);
+		
+		establecimiento.setFiFoto(util.Constantes.getFileFromBytes(
+		establecimiento.getByFotoBytes(),"C:/Users/Nico/Desktop/ps"));
+		
+		
+		//System.out.println(depa+prov+dist);
 		return "obtener";
 	}
 	

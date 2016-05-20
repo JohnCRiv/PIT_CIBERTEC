@@ -1,6 +1,8 @@
 package bean;
 
+import java.io.File;
 import java.io.Serializable;
+import java.util.Date;
 
 public class Establecimiento implements Serializable {
 	
@@ -16,13 +18,46 @@ public class Establecimiento implements Serializable {
 	private String codDepartamento;
 	private String codProvincia;
 	private String codDistrito;
+	private Date fechaRegistro;
 	
-
 	private Ubigeo ubigeo;
 	
+	private File fiFoto;
+	private String strfotoFileName;
+	private String strfotoContentType;
+	private byte[] byFotoBytes;
 	
 	
-	
+	public Date getFechaRegistro() {
+		return fechaRegistro;
+	}
+	public void setFechaRegistro(Date fechaRegistro) {
+		this.fechaRegistro = fechaRegistro;
+	}
+	public File getFiFoto() {
+		return fiFoto;
+	}
+	public void setFiFoto(File fiFoto) {
+		this.fiFoto = fiFoto;
+	}
+	public String getStrfotoFileName() {
+		return strfotoFileName;
+	}
+	public void setStrfotoFileName(String strfotoFileName) {
+		this.strfotoFileName = strfotoFileName;
+	}
+	public String getStrfotoContentType() {
+		return strfotoContentType;
+	}
+	public void setStrfotoContentType(String strfotoContentType) {
+		this.strfotoContentType = strfotoContentType;
+	}
+	public byte[] getByFotoBytes() {
+		return byFotoBytes;
+	}
+	public void setByFotoBytes(byte[] byFotoBytes) {
+		this.byFotoBytes = byFotoBytes;
+	}
 	public String getCodDepartamento() {
 		return codDepartamento;
 	}

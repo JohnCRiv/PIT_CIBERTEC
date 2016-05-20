@@ -42,6 +42,36 @@
 		
 		<!-- Modernizr JS -->
 		<script src="../../../assets/js/modernizr.min.js"></script>
+	<style>
+#fileOutput{
+
+background-size: cover;
+background-repeat: no-repeat;
+background-position: center;
+height: 250px;
+width: 420px;
+}
+</style>
+
+<script>
+
+
+processImg()
+function processFiles(files) {
+var file = files[0];
+
+var reader = new FileReader();
+
+reader.onload = function (e) {
+// Cuando este evento se dispara, los datos estan ya disponibles.
+// Se trata de copiarlos a una area <div> en la pagina.
+var output = document.getElementById("fileOutput"); 
+fileOutput.style.backgroundImage = "url('" + e.target.result + "')";
+};
+reader.readAsDataURL(file);
+}
+
+</script>
     </head>
 
     <body>
@@ -61,7 +91,7 @@
                     <div class="col-sm-12">
                         <div class="card-box">
                             <h2 class="" style="padding: 5px 20px 30px 20px;">Establecimiento</h2>
-                            <s:form id="idForm"  method="post" action="registrarEstablecimiento">
+                            <s:form id="idForm"  method="post" enctype="multipart/form-data" action="registrarEstablecimiento">
                             <div class="row">
                                 <div class="col-md-6">
                                     <div class="form-horizontal" role="form">
@@ -126,14 +156,6 @@
 												/>
                                             </div>
                                         </div>
-                                                              
-
-                                    </div>
-                                </div>
-
-                                <div class="col-md-6">
-                                    <div class="form-horizontal" role="form">                                                                                                               
-                                        
                                         <div class="form-group">
                                             <label class="col-md-3 control-label">Dirección</label>
                                             <div class="col-md-9">
@@ -151,15 +173,40 @@
                                             <div class="col-md-9">
                                                 <s:textfield name="establecimiento.encargado" cssClass="form-control"/>
                                             </div>
+                                        </div>   
+                                        
+                                         
+								
+                                    </div>
+                                </div>
+
+                                <div class="col-md-6">
+                                    <div class="form-horizontal" role="form">                                                                                                               
+                                        
+                                        <div class="form-group">
+                                            <label class="col-md-3 control-label">Foto</label>
+                                            <div class="col-md-9">
+                                                <s:file id="idFoto"  name="establecimiento.fiFoto" onchange="processFiles(this.files)"/>
+                                            </div>
+                                            
                                         </div>
+                                        
+                                        <!--  <div id="fileOutput"></div>-->
+                                        
+                                        <div class="container">
+                                        <div id="fileOutput" class="img-thumbnail" ></div>
+                                       
+										</div>
+										
+                                        
                                         <div class="form-group">
                                         	<div class="col-md-3">
                                         		<div></div>
                                         	</div>
                                         	<div class="col-md-9">
              
-	                                            <sj:submit value="Registrar" button="true" cssClass="btn btn-default waves-effect waves-light btn-md pull-rigth"/>
-	                                        
+	                                            <sj:submit value="Registrar"   button="true" cssStyle="margin-top:20px;" cssClass="btn btn-default waves-effect waves-light btn-md pull-rigth col-md-6"/>
+	                                        	
                                         	</div>
                                         </div>
 

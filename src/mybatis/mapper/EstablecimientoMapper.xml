@@ -7,12 +7,12 @@
 	
 	<insert id="registrar" parameterType="establecimiento">
 		INSERT INTO establecimiento 
-		VALUES (null,null,#{descripcion},#{idUbigeo},#{direccion},#{referencia},#{encargado},#{estado});
+		VALUES (null,null,#{descripcion},#{idUbigeo},#{direccion},#{referencia},#{encargado},#{byFotoBytes},#{fechaRegistro},#{estado});
 	</insert>
 	
 	<select id="obtener" parameterType="int" resultType="establecimiento">
 		select idEstablecimiento,codigoEst, descripcion, codDepartamento, 
-		codProvincia, codDistrito, direccion, referencia, encargado
+		codProvincia, codDistrito, direccion, referencia, encargado, foto as byFotoBytes
 		from establecimiento e join ubigeo u on e.idUbigeo= u.idUbigeo where idEstablecimiento=#{idEstablecimiento};
 	</select>
 	
@@ -26,7 +26,7 @@
 	
 	<update id="actualizar" parameterType="establecimiento">
 		update establecimiento set descripcion=#{descripcion}, idUbigeo=#{idUbigeo}, 
-		direccion=#{direccion}, referencia=#{referencia}, encargado=#{encargado}
+		direccion=#{direccion}, referencia=#{referencia}, encargado=#{encargado},foto=#{byFotoBytes}
 		where idEstablecimiento=#{idEstablecimiento};
 	</update>
 	
