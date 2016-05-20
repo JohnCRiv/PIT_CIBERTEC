@@ -78,8 +78,11 @@
                         <div class="card-box">
 	                            <h4 class="m-t-0 header-title"><b>Establecimientos de Pandero</b></h4>
 	                            <div class="p-20">
-		                            <label>Descripción</label>
-		                            <input style="margin-left:10px" type="text" >
+	                            <s:form method="post" action="buscarXdescripcion" >
+		                            <label>Establecimiento</label>		                            
+		                            <s:textfield name="establecimiento.desBuscar" cssStyle="margin-left:15px;"  />
+		                            <sj:submit value="Buscar" button="true" cssClass="btn btn-primary" cssStyle="margin-left:20px;"></sj:submit>
+		                        </s:form>
 	                            </div>
                                 <div class="p-20">
                                         <table class="table table-striped" id="datatable-editable">
@@ -113,9 +116,9 @@
 														<td><s:property value="encargado"/></td>
 														<td><s:property value="estado"/></td>
 														<td class="actions">
-			                                            	<s:a href="%{idObtener}" cssClass="on-default edit-row"><i class="fa fa-pencil"></i></s:a>
-			                                            	<s:a href="%{idAnular}" cssClass="on-default remove-row"><i class="fa fa-ban"></i></s:a>
-			                                            	<s:a href="%{idEliminar}" cssClass="on-default remove-row"><i class="fa fa-close"></i></s:a>
+			                                            	<s:a  href="%{idObtener}" cssClass="on-default edit-row" title="Editar" ><i class="fa fa-pencil"></i></s:a>
+			                                            	<s:a href="%{idAnular}" cssClass="on-default remove-row" title="Inhabilitar" ><i class="fa fa-ban"></i></s:a>
+			                                            	<s:a href="%{idEliminar}" cssClass="on-default remove-row" title="Eliminar"><i class="fa fa-trash-o"></i></s:a>
 			                                            	<!--<s:url var="remoteurl" escapeAmp="false"></s:url>
     															<sj:dialog id="mydialog" href="%{remoteurl}" title="Confirmacion" autoOpen="false" overlayOpacity="0.85" showEffect="scale">
     																<h4>¿Está seguro de inhabilitar este establecimiento?</h4>

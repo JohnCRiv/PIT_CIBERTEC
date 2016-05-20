@@ -65,5 +65,14 @@ public class EstablecimientoService implements EstablecimientoMapper {
 		
 	}
 
+	@Override
+	public List<Establecimiento> buscarXdescripcion(String descripcion) {
+		SqlSession session = MyBatisUtil.getSqlSessionFactory().openSession();
+		EstablecimientoMapper establecimientoMapper = session.getMapper(EstablecimientoMapper.class);
+		List<Establecimiento> lista =  establecimientoMapper.buscarXdescripcion(descripcion);
+		session.close();
+		return lista;
+	}
+
 
 }

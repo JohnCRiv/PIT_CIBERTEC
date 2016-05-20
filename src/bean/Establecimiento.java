@@ -27,7 +27,16 @@ public class Establecimiento implements Serializable {
 	private String strfotoContentType;
 	private byte[] byFotoBytes;
 	
+	private String desBuscar;
 	
+	
+	
+	public String getDesBuscar() {
+		return desBuscar;
+	}
+	public void setDesBuscar(String desBuscar) {
+		this.desBuscar = desBuscar;
+	}
 	public Date getFechaRegistro() {
 		return fechaRegistro;
 	}

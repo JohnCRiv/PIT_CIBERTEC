@@ -75,5 +75,17 @@ public interface EstablecimientoMapper {
 	 * 
 	 */
 	public void eliminar(int idEstablecimiento);
+	
+	/**
+	 * <strong>Buscar por descripcion<strong> <br>
+	 * Método que busca un establecimiento por su descripcion.
+	 * 
+	 * @author NicolasHidalgo
+	 * 
+	 * @param Establecimiento
+	 * 			id del establecimiento
+	 * 
+	 */
+	public List<Establecimiento> buscarXdescripcion(String descripcion);
 
 }

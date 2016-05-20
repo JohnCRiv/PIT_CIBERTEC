@@ -28,7 +28,7 @@ public class EstablecimientoAction extends ActionSupport {
 	
 	//nombre para los combitos
 	private String depa,prov, dist;
-	
+
 	@Action(value="/registrarEstablecimiento",results={
 			@Result(name="registrar",location="/pages/core/crud-establecimiento/listado-establecimiento.jsp")})
 	public String registrarEstablecimiento(){
@@ -100,6 +100,17 @@ public class EstablecimientoAction extends ActionSupport {
 	public void listar(){
 		lstEstablecimiento = new EstablecimientoService().listar();
 	}
+	@Action(value="/buscarXdescripcion",results={
+			@Result(name="buscarEst",location="/pages/core/crud-establecimiento/listado-establecimiento.jsp")})
+	public String buscarXdescripcion(){
+		if(!establecimiento.getDesBuscar().equals("")){
+			lstEstablecimiento = new EstablecimientoService().buscarXdescripcion(establecimiento.getDesBuscar());
+		}else {
+			lstEstablecimiento = new EstablecimientoService().listar();
+		}
+		return "buscarEst";
+	}	
+	
 	@Action(value="/listarUbigeo",results={
 			@Result(name="listarUbigeo",type="json")})
 	public String listarUbigeo(){

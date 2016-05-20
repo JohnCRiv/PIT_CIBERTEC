@@ -56,6 +56,11 @@
                     </ul>
                     <ul class="navigation-menu">
                         <li class="has-submenu">
+                            <a href="../../../core/crud-establecimiento/listado-establecimiento.jsp"><i class="md fa fa-hospital-o"></i>Establecimientos</a>
+                        </li>
+                    </ul>
+                    <ul class="navigation-menu">
+                        <li class="has-submenu">
                             <a href="#"><i class="md md-layers"></i>Reportes</a>
                         </li>
                     </ul>
@@ -64,6 +69,7 @@
                             <a href="#"><i class="md md-pages"></i>Seguridad</a>
                         </li>
                     </ul>
+                    
                     <!-- End navigation menu        -->
                 </div>
             </div>

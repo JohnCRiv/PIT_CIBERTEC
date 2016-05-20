@@ -13,6 +13,9 @@
 		<meta name="description" content="">
 		<meta name="author" content="">
 		
+		<!--  <link rel="styleshett" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-validator/0.5.3/css/bootstrapValidator.min.css">
+		<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-validator/0.5.3/js/bootstrapValidator.min.js"></script>
+		-->
 		<link rel="shortcut icon" href="../../../assets/images/favicon_1.ico">
 		
 		<!--Morris Chart CSS -->
@@ -54,8 +57,6 @@ width: 420px;
 </style>
 
 <script>
-
-
 processImg()
 function processFiles(files) {
 var file = files[0];
@@ -70,6 +71,7 @@ fileOutput.style.backgroundImage = "url('" + e.target.result + "')";
 };
 reader.readAsDataURL(file);
 }
+
 
 </script>
     </head>
@@ -98,7 +100,7 @@ reader.readAsDataURL(file);
                                         <div class="form-group">
                                             <label class="col-md-3 control-label">Descripción</label>
                                             <div class="col-md-9">
-                                                <s:textfield name="establecimiento.descripcion" cssClass="form-control"/>
+                                                <s:textfield name="establecimiento.descripcion" cssClass="form-control" requiredLabel/>
                                             </div>
                                         </div>
                                        

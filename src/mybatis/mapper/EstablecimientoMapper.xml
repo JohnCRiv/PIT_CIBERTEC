@@ -35,4 +35,9 @@
 		from establecimiento e join ubigeo u on e.idUbigeo=u.idUbigeo;
 	</select>
 	
+	<select id="buscarXdescripcion" parameterType="String" resultType="establecimiento">
+		select idEstablecimiento, codigoEst,descripcion,concat(u.departamento,' - ',u.provincia,' - ',u.distrito,' - ',e.direccion) as ubicacion,encargado,estado 
+		from establecimiento e join ubigeo u on e.idUbigeo=u.idUbigeo where descripcion like #{%desBuscar%};
+	</select>
+	
 </mapper>
