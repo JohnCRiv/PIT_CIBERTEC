@@ -2,77 +2,49 @@ package service;
 
 import java.util.List;
 
-import org.apache.ibatis.session.SqlSession;
-
-import util.MyBatisUtil;
 import bean.Establecimiento;
+import factory.Factory;
 import mybatis.interfaces.EstablecimientoMapper;
+import util.Constantes;
 
 public class EstablecimientoService implements EstablecimientoMapper {
 
+	Factory factory = Factory.getFactory(Constantes.ORIGEN_DATOS);
+	EstablecimientoMapper dao = factory.getEstablecimientoMapper();
+	
+	@Override
+	public List<Establecimiento> listar() {
+		return dao.listar();
+	}
+
 	@Override
 	public void registrar(Establecimiento establecimiento) {
-		SqlSession session = MyBatisUtil.getSqlSessionFactory().openSession();
-		EstablecimientoMapper establecimientoMapper = session.getMapper(EstablecimientoMapper.class);
-		establecimientoMapper.registrar(establecimiento);
-		session.commit();
-		session.close();
+		dao.registrar(establecimiento);
 	}
 
 	@Override
 	public Establecimiento obtener(int idEstablecimiento) {
-		SqlSession session = MyBatisUtil.getSqlSessionFactory().openSession();
-		EstablecimientoMapper establecimientoMapper = session.getMapper(EstablecimientoMapper.class);
-		Establecimiento establecimiento = establecimientoMapper.obtener(idEstablecimiento);
-		session.close();
-		return establecimiento;
+		return dao.obtener(idEstablecimiento);
 	}
 
 	@Override
 	public void actualizar(Establecimiento establecimiento) {
-		SqlSession session = MyBatisUtil.getSqlSessionFactory().openSession();
-		EstablecimientoMapper establecimientoMapper = session.getMapper(EstablecimientoMapper.class);
-		establecimientoMapper.actualizar(establecimiento);
-		session.commit();
-		session.close();
+		dao.actualizar(establecimiento);
 	}
 
 	@Override
 	public void anular(int idEstablecimiento) {
-		SqlSession session = MyBatisUtil.getSqlSessionFactory().openSession();
-		EstablecimientoMapper establecimientoMapper = session.getMapper(EstablecimientoMapper.class);
-		establecimientoMapper.anular(idEstablecimiento);
-		session.commit();
-		session.close();
-	}
-
-	@Override
-	public List<Establecimiento> listar() {
-		SqlSession session = MyBatisUtil.getSqlSessionFactory().openSession();
-		EstablecimientoMapper establecimientoMapper = session.getMapper(EstablecimientoMapper.class);
-		List<Establecimiento> lista =  establecimientoMapper.listar();
-		session.close();
-		return lista;
+		dao.anular(idEstablecimiento);
 	}
 
 	@Override
 	public void eliminar(int idEstablecimiento) {
-		SqlSession session = MyBatisUtil.getSqlSessionFactory().openSession();
-		EstablecimientoMapper establecimientoMapper = session.getMapper(EstablecimientoMapper.class);
-		establecimientoMapper.eliminar(idEstablecimiento);
-		session.commit();
-		session.close();
-		
+		dao.eliminar(idEstablecimiento);
 	}
 
 	@Override
 	public List<Establecimiento> buscarXdescripcion(String descripcion) {
-		SqlSession session = MyBatisUtil.getSqlSessionFactory().openSession();
-		EstablecimientoMapper establecimientoMapper = session.getMapper(EstablecimientoMapper.class);
-		List<Establecimiento> lista =  establecimientoMapper.buscarXdescripcion(descripcion);
-		session.close();
-		return lista;
+		return dao.buscarXdescripcion(descripcion);
 	}
-
-
+	
 }

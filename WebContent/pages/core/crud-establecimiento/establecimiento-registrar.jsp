@@ -100,7 +100,7 @@ reader.readAsDataURL(file);
                                         <div class="form-group">
                                             <label class="col-md-3 control-label">Descripción</label>
                                             <div class="col-md-9">
-                                                <s:textfield name="establecimiento.descripcion" cssClass="form-control" requiredLabel/>
+                                                <s:textfield name="establecimiento.descripcion" cssClass="form-control"/>
                                             </div>
                                         </div>
                                        

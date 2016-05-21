@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="mybatis.interfaces.EstablecimientoMapper">
+	
+	<insert id="registrar" parameterType="establecimiento">
+		INSERT INTO establecimiento 
+		VALUES (null,null,#{descripcion},#{idUbigeo},#{direccion},#{referencia},#{encargado},#{byFotoBytes},#{fechaRegistro},#{estado});
+	</insert>
+	
+	<select id="obtener" parameterType="int" resultType="establecimiento">
+		select idEstablecimiento,codigoEst, descripcion, codDepartamento, 
+		codProvincia, codDistrito, direccion, referencia, encargado, foto as byFotoBytes
+		from establecimiento e join ubigeo u on e.idUbigeo= u.idUbigeo where idEstablecimiento=#{idEstablecimiento};
+	</select>
+	
+	<update id="anular" parameterType="int">
+		update establecimiento set estado='Inhabilitado' where idEstablecimiento=#{idEstablecimiento};
+	</update>
+	
+	<delete id="eliminar" parameterType="int">
+		delete from establecimiento where idEstablecimiento=#{idEstablecimiento};
+	</delete>
+	
+	<update id="actualizar" parameterType="establecimiento">
+		update establecimiento set descripcion=#{descripcion}, idUbigeo=#{idUbigeo}, 
+		direccion=#{direccion}, referencia=#{referencia}, encargado=#{encargado},foto=#{byFotoBytes}
+		where idEstablecimiento=#{idEstablecimiento};
+	</update>
+	
+	<select id="listar" resultType="establecimiento">
+		select idEstablecimiento, codigoEst,descripcion,concat(u.departamento,' - ',u.provincia,' - ',u.distrito,' - ',e.direccion) as ubicacion,encargado,estado 
+		from establecimiento e join ubigeo u on e.idUbigeo=u.idUbigeo;
+	</select>
+	
+	<select id="buscarXdescripcion" parameterType="String" resultType="establecimiento">
+		select idEstablecimiento, codigoEst,descripcion,concat(u.departamento,' - ',u.provincia,' - ',u.distrito,' - ',e.direccion) as ubicacion,encargado,estado 
+		from establecimiento e join ubigeo u on e.idUbigeo=u.idUbigeo where descripcion like #{%desBuscar%};
+	</select>
+	
+</mapper>

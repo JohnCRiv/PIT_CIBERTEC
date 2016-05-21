@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE configuration PUBLIC "-//mybatis.org//DTD Config 3.0//EN" "http://mybatis.org/dtd/mybatis-3-config.dtd">
+				
+<configuration>
+
+	<properties resource="database.properties" />
+	
+	<settings>
+		<setting name="defaultStatementTimeout" value="3"/>
+	</settings>
+	
+	<typeAliases>
+		<typeAlias type="bean.Socio" alias="socio"/>
+		<typeAlias type="bean.Establecimiento" alias="establecimiento"/>
+		<typeAlias type="bean.Ubigeo" alias="ubigeo"/>
+	</typeAliases>
+	
+	<environments default="mysql">
+		<environment id="mysql">
+			<transactionManager type="JDBC" />
+			<dataSource type="UNPOOLED">
+				<property name="driver" value="${driver}"/>
+				<property name="url" value="${url}"/>
+				<property name="username" value="${username}"/>
+				<property name="password" value="${password}"/>
+			</dataSource>
+		</environment>
+	</environments>
+	
+	<mappers>
+		<mapper resource="mybatis/mapper/SocioMapper.xml"/>
+		<mapper resource="mybatis/mapper/EstablecimientoMapper.xml"/>
+		<mapper resource="mybatis/mapper/UbigeoMapper.xml"/>
+	</mappers>
+	
+</configuration>

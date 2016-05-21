@@ -6,9 +6,13 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
+import java.util.ResourceBundle;
 
 public class Constantes {
 
+	private static ResourceBundle resourceBundle = ResourceBundle.getBundle("database");
+    public static final Integer ORIGEN_DATOS = Integer.parseInt(resourceBundle.getString("origen_datos"));
+	
 	public static final String REGISTRAR = "REGISTRAR";
 	public static final String MODIFICAR = "MODIFICAR";
 	public static final String ELIMINAR = "ELIMINAR";
